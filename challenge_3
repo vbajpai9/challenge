@@ -1,0 +1,32 @@
+import java.io.*;
+class Cube {
+    double width, height, depth;
+    Cube(Cube ob)
+    {
+        width = ob.width;
+        height = ob.height;
+        depth = ob.depth;
+    }
+    Cube(double w, double h, double d)
+    {
+        width = w;
+        height = h;
+        depth = d;
+    }
+    double volume() { return width * height * depth; }
+}
+class Calculate {
+    public static void main(String args[])throws IOException
+    {
+        DataInputStream d=new DataInputStream(System.in);
+        double vol;
+        Cube mycube = new Cube(10, 20, 15);
+        Cube myclone = new Cube(mycube);
+        
+        vol = mycube.volume();
+        System.out.println("Volume of mycube is " + vol);
+ 
+        vol = myclone.volume();
+        System.out.println("Volume of myclone is " + vol);
+    }
+}
